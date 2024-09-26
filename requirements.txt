@@ -264,3 +264,4 @@ xyzservices==2024.9.0
 yarl==1.12.1
 yfinance==0.2.43
 zipp==3.20.2
+pysqlite3-binary
