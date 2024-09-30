@@ -32,11 +32,7 @@ model_option = ""
 
 st.title("💡 Quartz Labs innovation playground")
 
-st.logo(
-    "https://static.wixstatic.com/media/3ae95d_ccb521d3245b47fa86bae09a74834990~mv2.png/v1/fill/w_82,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Abstract%20Minimalist%20Patterned%20Lined%20Triangle%20Shape.png",
-    link="https://www.quartzlabs.ai/",
-    icon_image=LOGO_URL_SMALL,
-)
+st.sidebar.logo("https://static.wixstatic.com/media/3ae95d_ccb521d3245b47fa86bae09a74834990~mv2.png/v1/fill/w_82,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Abstract%20Minimalist%20Patterned%20Lined%20Triangle%20Shape.png", width=150)
 
 with st.sidebar:
     st.header("Enter your inputs below 👇")
