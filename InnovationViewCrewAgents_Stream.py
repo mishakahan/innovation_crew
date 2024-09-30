@@ -33,8 +33,7 @@ model_option = ""
 st.title("💡 Quartz Labs innovation playground")
 
 # URL to the logo image
-logo_url = "https://www.canva.com/design/DAGSPck4QvI/cwJfCP7N4JjqCN3XN6jLtg/view?utm_content=DAGSPck4QvI&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-
+logo_url = "https://static.wixstatic.com/media/e0938e_c5801b5be76d45d4b0d4ad0c66713857~mv2.jpg/v1/fill/w_222,h_222,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e0938e_c5801b5be76d45d4b0d4ad0c66713857~mv2.jpg"
 # Display the logo in the sidebar
 st.sidebar.image(logo_url, width=40)
 
@@ -53,32 +52,43 @@ with st.sidebar:
 
         st.subheader("Sector")
         sector = st.text_input(
-            "Provide information on your industry sector", placeholder="B2B vertically integrated coffee manufacturing")
+            "Provide information on your industry sector", 
+            placeholder="B2B vertically integrated coffee manufacturing",
+            value="B2B vertically integrated coffee manufacturing",)
+        
 
         st.subheader("Strategic priorities")
         strategic_priorities = st.text_area(
             "Describe your key strategic priorities",
-            placeholder="Identifying desirable and feasible innovations to bring to market")
+            placeholder="Identifying desirable and feasible innovations to bring to market",
+            value="Identifying desirable and feasible innovations to bring to market")
 
         st.subheader("Key resource")
         key_resource = st.text_input(
-            "Kindly input your key resource (e.g., asset)", placeholder="Coffee plants")
+            "Input your key resource or asset", placeholder="Coffee plants",
+            value="Coffee plants")
 
         st.subheader("Other resources")
         resources = st.text_area(
-            "Kindly input your other important resource(s)",
-            placeholder="Coffee plantations, coffee manufacturing plants, with all required machinery to extract and package solid and liquid coffee")
+            "Input your other important resource(s)",
+            placeholder="Coffee plantations, coffee manufacturing plants, with all required machinery to extract and package solid and liquid coffee",
+            value="Coffee plantations, coffee manufacturing plants, with all required machinery to extract and package solid and liquid coffee")
 
         st.subheader("Clients")
         clients = st.text_area(
-            "Describe your clients", placeholder="Large fast food chains and coffee retailers")
+            "Describe your clients", placeholder="Large fast food chains and coffee retailers",
+            value="Coffee plantations, coffee manufacturing plants, with all required machinery to extract and package solid and liquid coffee")
 
         st.subheader("Your challenge")
         challenge = st.text_area(
             "What challenge do you want to solve today?",
-            placeholder="Create a list of ideas on using the byproducts of coffee plant and products generated using coffee creation process, broken down by feasibility, desirability and viability and save the file in an .md format. Do include the sources as well for credibility.")
+            placeholder="Create a list of ideas on using the byproducts of coffee plant and products generated using coffee creation process, broken down by feasibility, desirability and viability and save the file in an .md format. Do include the sources as well for credibility.",
+            value="Create a list of ideas on using the byproducts of coffee plant and products generated using coffee creation process, broken down by feasibility, desirability and viability and save the file in an .md format. Do include the sources as well for credibility.")
 
         submitted = st.form_submit_button("Submit")
+
+        # Add a toggle for verbose output at the bottom of the sidebar
+        verbose_toggle = st.checkbox("Enable Verbose Mode for Agents")
 
 st.divider()
 
@@ -183,6 +193,9 @@ if (submitted):
     #                          n=1)
 
     # Agents
+
+    verbose_mode = verbose_toggle
+    
     manager = Agent(
         role="Project Manager",
         goal="Efficiently manage the research team and ensure the production of world-class research reports",
@@ -194,7 +207,7 @@ if (submitted):
             "If anything is missing or not at the right level of quality, send it back for revision.\n"
         ),
         # allow_delegation=True,
-        verbose=False
+        verbose=verbose_mode
     )
 
     domain_expert = Agent(
@@ -204,7 +217,7 @@ if (submitted):
                 "You are a world class domain expert in the sector of " + sector + ". You are particularly knowledgeable on the key resource {key_resource}."
         ),
         # allow_delegation=False,
-        verbose=False
+        verbose=verbose_mode
     )
 
     engineer = Agent(
@@ -227,7 +240,7 @@ if (submitted):
                                                                    "You know what clients and consumers want and can rapidly assess whether they will buy it, in what quantities and for what price."
         ),
         # allow_delegation=False,
-        verbose=False
+        verbose=verbose_mode
     )
 
     # Tasks
