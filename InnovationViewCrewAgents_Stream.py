@@ -30,27 +30,50 @@ challenge = ""
 openapi_key = ""
 model_option = ""
 
-st.title("💬 Brewing innovation with AI agents")
+st.title("💡 Quartz Labs innovation playground")
+
+st.logo(
+    "https://static.wixstatic.com/media/3ae95d_ccb521d3245b47fa86bae09a74834990~mv2.png/v1/fill/w_82,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Abstract%20Minimalist%20Patterned%20Lined%20Triangle%20Shape.png",
+    link="https://www.quartzlabs.ai/",
+    icon_image=LOGO_URL_SMALL,
+)
+
 with st.sidebar:
     st.header("Enter your inputs below 👇")
+
+    
+    
     with st.form("my_form1"):
         model_option = st.selectbox(
             "Select the OpenAI Model", ("gpt-4o"))
         openapi_key = st.text_input(
             "Provide your OpenAPI key", type="password")
         # st.write(model_option + openapi_key)
+        st.divider()
+
+        st.subheader("Sector")
         sector = st.text_input(
             "Provide information on your industry sector", placeholder="B2B vertically integrated coffee manufacturing")
-        strategic_priorities = st.text_input(
+
+        st.subheader("Strategic priorities")
+        strategic_priorities = st.text_area(
             "Describe your key strategic priorities",
             placeholder="Identifying desirable and feasible innovations to bring to market")
+
+        st.subheader("Key resource")
         key_resource = st.text_input(
             "Kindly input your key resource (e.g., asset)", placeholder="Coffee plants")
-        resources = st.text_input(
+
+        st.subheader("Other resources")
+        resources = st.text_area(
             "Kindly input your other important resource(s)",
             placeholder="Coffee plantations, coffee manufacturing plants, with all required machinery to extract and package solid and liquid coffee")
-        clients = st.text_input(
+
+        st.subheader("Clients")
+        clients = st.text_area(
             "Describe your clients", placeholder="Large fast food chains and coffee retailers")
+
+        st.subheader("Your challenge")
         challenge = st.text_area(
             "What challenge do you want to solve today?",
             placeholder="Create a list of ideas on using the byproducts of coffee plant and products generated using coffee creation process, broken down by feasibility, desirability and viability and save the file in an .md format. Do include the sources as well for credibility.")
