@@ -32,7 +32,11 @@ model_option = ""
 
 st.title("💡 Quartz Labs innovation playground")
 
-st.sidebar.logo("https://static.wixstatic.com/media/3ae95d_ccb521d3245b47fa86bae09a74834990~mv2.png/v1/fill/w_82,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Abstract%20Minimalist%20Patterned%20Lined%20Triangle%20Shape.png", width=150)
+# URL to the logo image
+logo_url = "https://static.wixstatic.com/media/3ae95d_ccb521d3245b47fa86bae09a74834990~mv2.png/v1/fill/w_82,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Abstract%20Minimalist%20Patterned%20Lined%20Triangle%20Shape.png"
+
+# Display the logo in the sidebar
+st.sidebar.image(logo_url, width=150)
 
 with st.sidebar:
     st.header("Enter your inputs below 👇")
