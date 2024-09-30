@@ -33,10 +33,10 @@ model_option = ""
 st.title("💡 Quartz Labs innovation playground")
 
 # URL to the logo image
-logo_url = "https://static.wixstatic.com/media/3ae95d_ccb521d3245b47fa86bae09a74834990~mv2.png/v1/fill/w_82,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Abstract%20Minimalist%20Patterned%20Lined%20Triangle%20Shape.png"
+logo_url = "https://www.canva.com/design/DAGSPck4QvI/cwJfCP7N4JjqCN3XN6jLtg/view?utm_content=DAGSPck4QvI&utm_campaign=designshare&utm_medium=link&utm_source=editor"
 
 # Display the logo in the sidebar
-st.sidebar.image(logo_url, width=150)
+st.sidebar.image(logo_url, width=40)
 
 with st.sidebar:
     st.header("Enter your inputs below 👇")
