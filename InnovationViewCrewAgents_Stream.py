@@ -35,7 +35,7 @@ st.title("💡 Quartz Labs innovation playground")
 # URL to the logo image
 logo_url = "https://static.wixstatic.com/media/e0938e_c5801b5be76d45d4b0d4ad0c66713857~mv2.jpg/v1/fill/w_222,h_222,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e0938e_c5801b5be76d45d4b0d4ad0c66713857~mv2.jpg"
 # Display the logo in the sidebar
-st.sidebar.image(logo_url, width=40)
+st.sidebar.image(logo_url, width=80)
 
 with st.sidebar:
     st.header("Enter your inputs below 👇")
@@ -225,7 +225,7 @@ if (submitted):
         goal="Identifying the right methods and technologies to perform the tasks required, and assessing their feasibility.",
         backstory=(
                 "You are an expert engineer, knowing everything in the world of " + sector + "."
-                                                                                             "You are good at providing back of the envelope calculations and estimations on how feasible and complex things are"
+                "You are good at providing back of the envelope calculations and estimations on how feasible and complex things are. "
 
         ),
         # allow_delegation=False,
@@ -237,7 +237,7 @@ if (submitted):
         goal="Coming up with clever, original product ideas and assessing how likely people are to buy them.",
         backstory=(
                 "You have the pulse of the market for " + sector + "."
-                                                                   "You know what clients and consumers want and can rapidly assess whether they will buy it, in what quantities and for what price."
+                "You know what clients and consumers want and can rapidly assess whether they will buy it, in what quantities and for what price."
         ),
         # allow_delegation=False,
         verbose=verbose_mode
@@ -247,25 +247,25 @@ if (submitted):
     breakdown_task = Task(
         description=(
                 "Break down " + key_resource + " into mutually exclusive, collectively exhaustive sub-components. "
-                                               "For example, if tasked with finding alternative uses for coffee production byproducts, "
-                                               "you might break it down into beans, trees and coffee grounds. "
-                                               "Each of these could be then be broken down into sub-elements, "
-                                               "e.g., the tree has root, trunk and leaves."
-                                               "Do this based on your training, no need to search online"
-                                               "keep in mind the sector, client, resources and challenge for context. \n"
+                "For example, if tasked with finding alternative uses for coffee production byproducts, "
+                "you might break it down into beans, trees and coffee grounds. "
+                "Each of these could be then be broken down into sub-elements, "
+                "e.g., the tree has root, trunk and leaves."
+                "Do this based on your training, no need to search online. "
+                "Keep in mind the sector, client, resources and challenge for context. \n"
 
-                                               "Generate a table with each part " + key_resource + "(e.g., plant/bean/grounds) in the first column, "
-                                                                                                   "the sub-part in the second (e.g., leaves as part of the plant), "
-                                                                                                   "the core or active principle in the third (e.g., antioxidants, dietary fiber), "
-                                                                                                   "and possible uses or benefits in the fourth. "
-                                                                                                   "Search for possible uses online. "
-                                                                                                   "Be sure to have one row per each possible use: there should be only one possible use in each row, and multiple rows with possible uses for each active principle and sub-part. \n"
+                "Generate a table with each part " + key_resource + "(e.g., plant/bean/grounds) in the first column, "
+                "the sub-part in the second (e.g., leaves as part of the plant), "
+                "the core or active principle in the third (e.g., antioxidants, dietary fiber), "
+                "and possible uses or benefits in the fourth. "
+                "Search for possible uses online. "
+                "Be sure to have one row per each possible use: there should be only one possible use in each row, and multiple rows with possible uses for each active principle and sub-part. \n"
 
-                                                                                                   "Stop and ask the user for confirmation, summarizing what you have done."
+                "Stop and ask the user for confirmation, summarizing what you have done."
 
-                                                                                                   "Sector: " + sector + "\n"
-                                                                                                                         "Clients: " + clients + "\n"
-                                                                                                                                                 "Challenge: " + challenge + "\n"
+                "Sector: " + sector + "\n"
+                "Clients: " + clients + "\n"
+                "Challenge: " + challenge + "\n"
 
         ),
         expected_output=(
